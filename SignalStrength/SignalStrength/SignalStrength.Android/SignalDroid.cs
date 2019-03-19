@@ -19,12 +19,12 @@ namespace SignalStrength.Droid
 {
     public class SignalDroid : IWifiSignal
     {
-      
+
         public int GetStrength()
         {
             Context _context = Android.App.Application.Context;
             //Xamarin.Forms.Forms.Context
-            //WifiManager wifiManager = (WifiManager)Forms.Context.GetSystemService(Context.WifiService); /*OBSOLETO*/
+            //WifiManager wifiManager = (WifiManager)Forms.Context.GetSystemService(Context.WifiService);
             WifiManager wifiManager = (WifiManager)_context.GetSystemService(Context.WifiService);
             int numberOfLevels = 5;
             WifiInfo wifiInfo = wifiManager.ConnectionInfo;
@@ -32,7 +32,5 @@ namespace SignalStrength.Droid
             int level = WifiManager.CalculateSignalLevel(wifiInfo.Rssi, numberOfLevels);
             return level;
         }
-
-     
     }
 }
