@@ -17,8 +17,8 @@ namespace SignalStrength
         protected override void OnStart()
         {
             // Handle when your app starts
-            int signalCross = DependencyService.Get<IWifiSignal>().GetStrength();
-            MainPage.DisplayAlert("Ok", signalCross.ToString(),"ok");
+            int SignalLeve = DependencyService.Get<IWifiSignal>().GetStrength();
+            MainPage.DisplayAlert("Message", SignalLeve.ToString(),"ok");
         }
 
         protected override void OnSleep()
@@ -29,8 +29,8 @@ namespace SignalStrength
         protected override void OnResume()
         {
             // Handle when your app resumes
-            int signalCross = DependencyService.Get<IWifiSignal>().GetStrength();
-            MainPage.DisplayAlert("Ok", signalCross.ToString(), "ok");
+            int SignalLeve = DependencyService.Get<IWifiSignal>().GetStrength();
+            MainPage.DisplayAlert("Message", SignalLeve.ToString(), "ok");
         }
     }
 }
